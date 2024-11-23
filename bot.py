@@ -19,7 +19,7 @@ async def on_ready():
 
 @bot.command()
 async def how(ctx):
-    await ctx.send(f'You have to write using ?.\n?yellow gives you information on the yellow bin.\n?blue gives you information on the blue bin.\n?brown gives you information on the brown bin.\n?green gives you information on the green bin.\n?gray gives you information on the gray bin.')
+    await ctx.send(f'You have to write using ?.\n?yellow gives you information on the yellow bin.\n?blue gives you information on the blue bin.\n?brown gives you information on the brown bin.\n?green gives you information on the green bin.\n?gray gives you information on the gray bin.\nAlso, ?other gives you information on other residue.')
 
 @bot.command()
 async def yellow(ctx):
@@ -51,5 +51,10 @@ async def gray(ctx):
         picture = discord.File(f)
         await ctx.send(f'On the gray bin, you have to throw any other type of waste not mentioned on the explanaitions for the other bins, such as baby pacifiers, or used napkins.', file=picture)
 
+@bot.command()
+async def other(ctx):
+    with open('M2L2\images\mecycling_center.jpg', 'rb') as f:
+        picture = discord.File(f)
+        await ctx.send(f'For other residue, that is way too big or contaminant, you have to go to your local recycling center. This includes waste such as furniture, batteries and lightbulbs.', file=picture)
 
-bot.run('Add your token.')
+bot.run('Add your token')
